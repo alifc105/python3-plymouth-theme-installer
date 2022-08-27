@@ -1,4 +1,9 @@
-from termcolor import colored
+try:
+    from termcolor import colored
+except ImportError():
+    print("This script is about to install \"termcolor\" to your system, keep connect to internet...")
+    os.system('sudo apt install python-pip3')
+    os.system('pip3 install termcolor')
 import os
 import sys
 import subprocess as sp
