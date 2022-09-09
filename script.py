@@ -1,11 +1,6 @@
-try:
-    from termcolor import colored
-except ImportError():
-    print("This script is about to install \"termcolor\" to your system, keep connect to the internet...")
-    os.system('sudo apt install python-pip3')
-    os.system('pip3 install termcolor')
-
 import os
+import colorama
+from colorama import Fore
 import sys
 import subprocess as sp
 
@@ -60,7 +55,7 @@ while choice != '6' :
     elif choice == '4':
         print("\nList of themes in /usr/share/plymouth/themes:\n")
         listing = sp.getoutput("ls /usr/share/plymouth/themes")
-        print(colored('\033[1m' + listing + '\033[0m', 'green'))
+        print(listing) #green
 
     elif choice == '5':
         os.system("init 6")
