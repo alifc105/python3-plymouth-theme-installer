@@ -1,6 +1,6 @@
 import os
 import colorama
-from colorama import Fore
+from colorama import Fore, Style
 import sys
 import subprocess as sp
 
@@ -55,7 +55,7 @@ while choice != '6' :
     elif choice == '4':
         print("\nList of themes in /usr/share/plymouth/themes:\n")
         listing = sp.getoutput("ls /usr/share/plymouth/themes")
-        print(listing) #green
+        print(Fore.RED + listing + Style.RESET_ALL) #red
 
     elif choice == '5':
         os.system("init 6")
