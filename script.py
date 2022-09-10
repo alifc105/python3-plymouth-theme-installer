@@ -7,7 +7,6 @@ import subprocess as sp
 
 print("Python3 Plymouth Theme Installer ")
 print("Version: v1.5")
-print('\033[1m' + "*This script is just for Ubuntu and it's deriverate"+'\033[0m')
 
 def menu():
     print("")
