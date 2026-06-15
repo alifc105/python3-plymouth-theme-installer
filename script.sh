@@ -8,7 +8,6 @@ import subprocess as sp
 
 print("Python3 Plymouth Theme Installer ")
 print("Version: v1.6")
-print("Thank you for using this tool.")
 
 def menu():
     print("")
@@ -41,7 +40,7 @@ while choice != '6' :
     elif choice == '1':
         print("")
         newTheme = input("Theme directory: ")
-        os.system("sudo mv %s /usr/share/plymouth/themes/" %(newTheme))
+        os.system("sudo mv %s \"/usr/share/plymouth/themes/\"" %(newTheme))
         print("Done.")
         print("Type 2 to add the theme to default.plymouth")
     
@@ -59,11 +58,13 @@ while choice != '6' :
         print(Fore.RED + listing + Style.RESET_ALL) #red
 
     elif choice == '5':
+        print("Rebooting...")
         os.system("init 6")
         
     elif choice == '6':
         pass
-    
+        print("Thank you for using this tool.")
+        
     elif choice == '?':
         menu()
         
