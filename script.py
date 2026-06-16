@@ -1,12 +1,19 @@
-import os
+import os, time
 import colorama
 from colorama import Fore, Style
 import sys
 import subprocess as sp
 
+os.system("clear")
+print("Downloading deps...\n")
+time.sleep(3)
+os.system("sudo apt install plocate")
+print("\nDeps installed succesfully!\n")
+time.sleep(2)
+os.system("clear")
 
 print("Python3 Plymouth Theme Installer ")
-print("Version: v1.5")
+print("Version: v1.6")
 
 def menu():
     print("")
@@ -38,8 +45,8 @@ while choice != '6' :
 
     elif choice == '1':
         print("")
-        newTheme = input("Theme directory:")
-        os.system("sudo mv %s /usr/share/plymouth/themes/" %(newTheme))
+        newTheme = input("Theme directory: ")
+        os.system("sudo cp -r \"%s\" /usr/share/plymouth/themes/" %(newTheme))
         print("Done.")
         print("Type 2 to add the theme to default.plymouth")
     
@@ -57,13 +64,16 @@ while choice != '6' :
         print(Fore.RED + listing + Style.RESET_ALL) #red
 
     elif choice == '5':
+        print("Rebooting...")
         os.system("init 6")
         
     elif choice == '6':
+        time.sleep(1)
+        print("Thank you for using this tool.")
         pass
-    
+        
     elif choice == '?':
         menu()
         
     else:
-        print("Your Input isn\'t valid!")
+        print("Your Input is invalid!")
