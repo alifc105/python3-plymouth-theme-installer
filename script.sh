@@ -1,10 +1,17 @@
 #!/bin/python3
-import os
+import os, time
 import colorama
 from colorama import Fore, Style
 import sys
 import subprocess as sp
 
+os.system("clear")
+print("Downloading deps...\n")
+time.sleep(3)
+os.system("sudo apt install plocate")
+print("\nDeps installed succesfully!\n")
+time.sleep(2)
+os.system("clear")
 
 print("Python3 Plymouth Theme Installer ")
 print("Version: v1.6")
@@ -62,8 +69,9 @@ while choice != '6' :
         os.system("init 6")
         
     elif choice == '6':
-        pass
+        time.sleep(1)
         print("Thank you for using this tool.")
+        pass
         
     elif choice == '?':
         menu()
