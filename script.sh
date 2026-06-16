@@ -40,7 +40,7 @@ while choice != '6' :
     elif choice == '1':
         print("")
         newTheme = input("Theme directory: ")
-        os.system("sudo mv %s \"/usr/share/plymouth/themes/\"" %(newTheme))
+        os.system("sudo cp -r \"%s\" /usr/share/plymouth/themes/" %(newTheme))
         print("Done.")
         print("Type 2 to add the theme to default.plymouth")
     
